@@ -1,86 +1,93 @@
 
+hide stereotype
 
-
- Colors
-' ##################################
-    '# GCPBlue: "#4285f4" color from svgs but looks anemic in rendered puml
-    'GCPBlue: "#036ffc"   
-!define GCP_COLOR #036ffc
-!define GCP_BG_COLOR #FFFFFF
-!define GCP_BORDER_COLOR #FF9900
-!define GCP_SYMBOL_COLOR GCP_COLOR
-
-' Styling
-' ##################################
-
-!define TECHN_FONT_SIZE 12
-
-skinparam defaultTextAlignment center
-
-skinparam wrapWidth 200
-skinparam maxMessageSize 150
-
-skinparam rectangle {
-    StereotypeFontSize 12
-}
-
-skinparam Arrow {
-    Color #666666
-    FontColor #666666
-    FontSize 12
-}
-
-!definelong EntityColoring(stereo)
-skinparam rectangle<<stereo>> {
-    BackgroundColor GCP_BG_COLOR
-    BorderColor GCP_BORDER_COLOR
-}
-skinparam participant<<stereo>> {
-    BackgroundColor GCP_BG_COLOR
-    BorderColor GCP_BORDER_COLOR
-}
-!enddefinelong
-
-' Layout
-' ##################################
-
-!definelong LAYOUT_AS_SKETCH
-skinparam backgroundColor #EEEBDC
-skinparam handwritten true
-skinparam defaultFontName "Comic Sans MS"
-center footer <font color=red>Warning:</font> Created for discussion, needs to be validated
-!enddefinelong
+' Shortcuts
+' ##############
 
 !define LAYOUT_TOP_DOWN top to bottom direction
 !define LAYOUT_LEFT_RIGHT left to right direction
 
-' Elements
+' Colors
 ' ##################################
 
-!definelong Entity(e_alias, e_label, e_techn, e_color, e_sprite, e_stereo)
-rectangle "==e_label\n<color:e_color><$e_sprite></color>\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<e_stereo>> as e_alias
-!enddefinelong
-
-!definelong Entity(e_alias, e_label, e_techn, e_descr, e_color, e_sprite, e_stereo)
-rectangle "==e_label\n<color:e_color><$e_sprite></color>\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<e_stereo>> as e_alias
-!enddefinelong
-
-!definelong Participant(p_alias, p_label, p_techn, p_color, p_sprite, p_stereo)
-participant "p_label\n<size:TECHN_FONT_SIZE>[p_techn]</size>" as p_alias << ($p_sprite, p_color) p_stereo>>
-!enddefinelong
-
-!definelong Participant(p_alias, p_label, p_techn, p_descr, p_color, p_sprite, p_stereo)
-participant "p_label\n<size:TECHN_FONT_SIZE>[p_techn]</size>\n\n p_descr" as p_alias << ($p_sprite, p_color) p_stereo>>
-!enddefinelong
-
-' ------ Base Container ---------
+!define DEFAULT_COLOR_FONT #000000
+!define DEFAULT_COLOR_BACKGROUND #E5E5E5
+!define DEFAULT_COLOR_BORDER #14213D
+!define DEFAULT_COLOR_ARROW #FCA311
+!define DEFAULT_COLOR_ACTOR #000000
+!define DEFAULT_COLOR_INTERFACE #000000
 
 
-!function $container($alias, $description="", $label="", $technology="", $size=12, $colour="green")
-rectangle $alias as "
-<color:$colour><<$alias>></color>
-==$label==
-//<size:$size>[$technology]</size>//
+' Styling
+' ##################################
 
-  $description"
-!endprocedure
+!define DEFAULT_PADDING 200
+!define DEFAULT_FONT_SIZE 15
+!define DEFAULT_FONT_SIZE_ADDL_TEXT 12
+
+
+skinparam DefaultFontSize DEFAULT_FONT_SIZE
+skinparam defaultTextAlignment center
+skinparam BoxPadding DEFAULT_PADDING
+skinparam DefaultFontName Helvetica
+skinparam shadowing false
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+skinparam linetype ortho
+
+
+skinparam ArrowColor DEFAULT_COLOR_ARROW
+skinparam ColorArrowSeparationSpace 30
+skinparam ArrowThickness 3
+
+skinparam rectangle {
+    StereotypeFontSize 40
+    Shadowing false
+    StereotypeFontColor DEFAULT_COLOR_FONT
+    FontColor DEFAULT_COLOR_FONT
+    FontSize DEFAULT_FONT_SIZE
+    BorderColor DEFAULT_COLOR_BORDER
+    BackgroundColor DEFAULT_COLOR_BACKGROUND
+}
+
+
+' skinparam rectangle<<container>> {
+'     StereotypeFontColor DEFAULT_COLOR_FONT
+'     FontColor DEFAULT_COLOR_FONT
+'     BackgroundColor CONTAINER_BG_COLOR
+'     BorderColor #3C7FC0
+' }
+
+skinparam DatabaseBackgroundColor DEFAULT_COLOR_BACKGROUND
+skinparam DatabaseBorderColor DEFAULT_COLOR_BORDER
+
+' skinparam ArrowThickness 4
+skinparam Arrow {
+    Color DEFAULT_COLOR_ARROW
+    ' FontColor #666666
+    ' FontSize 12
+    ' Thickness 4a
+    
+}
+
+skinparam rectangle<<boundary>> {
+    Shadowing false
+    StereotypeFontSize 0
+    FontColor #444444
+    BorderColor #444444
+    BorderStyle dashed
+}
+
+
+skinparam InterfaceBorderColor DEFAULT_COLOR_INTERFACE
+skinparam InterfaceBorderColor DEFAULT_COLOR_INTERFACE
+
+
+skinparam ActorBorderColor DEFAULT_COLOR_ACTOR
+skinparam ActorBackgroundColor DEFAULT_COLOR_ACTOR
+
+' Boundaries
+' ##################################
+
+!define Boundary(e_alias, e_label) rectangle "==e_label" <<boundary>> as e_alias
+!define Boundary(e_alias, e_label, e_type) rectangle "==e_label\n<size:DEFAULT_FONT_SIZE_ADDL_TEXT>e_type</size>" <<boundary>> as e_alias
