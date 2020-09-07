@@ -65,16 +65,20 @@ entity entity
 file file
 folder folder
 frame frame
+
 interface  interface
 node node
 package package
 queue queue
+
 stack stack
 rectangle rectangle
 storage storage
 usecase usecase
 
+
 @enduml
+
 
 ```
 

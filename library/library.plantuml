@@ -27,7 +27,7 @@ hide stereotype
 
 
 skinparam DefaultFontSize DEFAULT_FONT_SIZE
-skinparam defaultTextAlignment center
+skinparam defaultTextAlignment left
 skinparam BoxPadding DEFAULT_PADDING
 skinparam DefaultFontName Helvetica
 skinparam shadowing false
@@ -76,6 +76,7 @@ skinparam rectangle<<boundary>> {
     FontColor #444444
     BorderColor #444444
     BorderStyle dashed
+    
 }
 
 
