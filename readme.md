@@ -8,3 +8,15 @@
 
 
 - Many of the ideas here were copied from [https://github.com/RicardoNiepel/C4-PlantUML](https://github.com/RicardoNiepel/C4-PlantUML)
+
+
+## Usage
+
+Styling
+
+```plantuml
+!include https://raw.githubusercontent.com/chrismalek/plantuml-library/master/library/styling.plantuml
+
+rectangle "hello world"
+
+```
