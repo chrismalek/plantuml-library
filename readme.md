@@ -15,8 +15,10 @@
 Styling
 
 ```plantuml
+@startuml
 !include https://raw.githubusercontent.com/chrismalek/plantuml-library/master/library/styling.plantuml
 
 rectangle "hello world"
 
+@enduml
 ```
