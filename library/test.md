@@ -3,8 +3,8 @@
 
 !include library.plantuml
 
-LAYOUT_LEFT_RIGHT
 
+LAYOUT_LEFT_RIGHT
 skinparam nodesep 50
 skinparam ranksep 20
 
@@ -12,6 +12,9 @@ title Hello title
 
 header hello header
 footer hello footer
+
+
+
 rectangle "Test Rectangle"
 
 rectangle "Outer Rectangle" {
@@ -23,15 +26,18 @@ package "hello" as pack {
 }
 
 
+
 database "db\nnote" as db1 {
 
 }
+
 
 Boundary(boundary1, "first boundry")
 
 Boundary(boundary2, "Second Boundry", "type param")
 
 boundary1 -> boundary2
+
 
 Boundary(boundparent1, "Parent") {
 
@@ -41,10 +47,15 @@ Boundary(boundparent1, "Parent") {
 }
 
 
+BoundaryPackage("bp1", "Boundary Package 1") {
+  rectangle "hello inside boundary package"
+}
+
 
 b-->c: Hello
 ba*-->ca:hello
 bb*....>cb:hello
+
 
 Actor "Actor 1" as act1
 interface "interface" as Inter1
@@ -80,15 +91,48 @@ usecase usecase
 @enduml
 
 
+
+```
+
+
+```plantuml
+!include library.plantuml
+
+' !include https://raw.githubusercontent.com/chrismalek/plantuml-library/master/library/library.plantuml
+' skinparam linetype ortho
+
+Boundary("c.n", "Client Network") {
+    rectangle "uploader" as p.u
+}
+
+Boundary("gcp", "GCP"){
+
+
+    Boundary("gcp.proj", "GCP Project") {
+        rectangle "Cloud Run API" as gcp.cr.api
+        rectangle "Cloud Storage" as gcp.cs.bucket
+        rectangle "PUB/SUB" AS gcp.ps.fileEvent
+        database "FireStore" as gcp.fs.db {
+            rectangle "File Table"
+        }
+
+        gcp.cr.api --> gcp.cs.bucket
+        gcp.cs.bucket --> gcp.ps.fileEvent: Storage\nNotifications
+        gcp.ps.fileEvent --> gcp.cr.api: File Event Listener\nv1/pubsub/fileEvent
+
+
+    }
+
+}
+
+p.u --> gcp.cr.api: v1/data/inbound - xml files
+
 ```
 
 
 
-
-
-
 ```plantuml
-@startuml
+@startuml 
 help skinparams
 @enduml
 

@@ -1,0 +1,39 @@
+' Colors
+' ##################################
+' https://coolors.co/f94144-f3722c-f8961e-f9c74f-90be6d-43aa8b-577590
+!define DEFAULT_COLOR_FONT #000000
+!define DEFAULT_COLOR_BACKGROUND #F2F5F7
+!define DEFAULT_COLOR_BORDER #14213D
+!define DEFAULT_COLOR_ARROW #F8961E
+!define DEFAULT_COLOR_ARROW_TEXT #F8961E
+!define DEFAULT_COLOR_ACTOR #000000
+!define DEFAULT_COLOR_INTERFACE #000000
+!define DEFAULT_COLOR_BOUNDARY_BORDER #577590
+!define DEFAULT_COLOR_BOUNDARY_BACKGROUND White
+
+
+
+skinparam ActorBackgroundColor DEFAULT_COLOR_ACTOR
+skinparam ActorBorderColor DEFAULT_COLOR_ACTOR
+skinparam ArrowColor DEFAULT_COLOR_ARROW
+skinparam ArrowFontColor DEFAULT_COLOR_ARROW_TEXT
+skinparam DatabaseBackgroundColor DEFAULT_COLOR_BACKGROUND
+skinparam DatabaseBorderColor DEFAULT_COLOR_BORDER
+skinparam InterfaceBorderColor DEFAULT_COLOR_INTERFACE
+skinparam InterfaceBorderColor DEFAULT_COLOR_INTERFACE
+skinparam packageBackgroundColor DEFAULT_COLOR_BACKGROUND
+skinparam packageBorderColor DEFAULT_COLOR_BORDER
+skinparam packageFontColor DEFAULT_COLOR_FONT
+skinparam packageStereotypeFontColor DEFAULT_COLOR_FONT
+skinparam rectangleBackgroundColor DEFAULT_COLOR_BACKGROUND
+skinparam rectangleBorderColor DEFAULT_COLOR_BORDER
+skinparam rectangleFontColor DEFAULT_COLOR_FONT
+skinparam rectangleFontSize DEFAULT_FONT_SIZE
+skinparam rectangleStereotypeFontColor DEFAULT_COLOR_FONT
+skinparam ParticipantBackgroundColor DEFAULT_COLOR_BACKGROUND
+skinparam ParticipantBorderColor DEFAULT_COLOR_BORDER
+skinparam ParticipantFontColor DEFAULT_COLOR_FONT
+skinparam ParticipantFontSize DEFAULT_FONT_SIZE
+skinparam ParticipantStereotypeFontColor DEFAULT_COLOR_FONT
+skinparam sequenceLifeLineBorderColor DEFAULT_COLOR_BORDER
+skinparam sequenceLifeLineBackgroundColor #DEFAULT_COLOR_BORDER
