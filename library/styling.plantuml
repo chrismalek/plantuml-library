@@ -43,5 +43,13 @@ skinparam rectangleFontSize DEFAULT_FONT_SIZE
 skinparam rectangleStereotypeFontColor DEFAULT_COLOR_FONT
 skinparam sequenceLifeLineBackgroundColor #DEFAULT_COLOR_BORDER
 skinparam sequenceLifeLineBorderColor DEFAULT_COLOR_BORDER
+
+skinparam QueueBackgroundColor DEFAULT_COLOR_BACKGROUND
+skinparam QueueBorderColor DEFAULT_COLOR_BORDER
+skinparam QueueFontColor DEFAULT_COLOR_FONT
+skinparam QueueFontSize DEFAULT_FONT_SIZE
+skinparam QueueStereotypeFontColor DEFAULT_COLOR_FONT
+
+
 skinparam shadowing false
 skinparam wrapWidth 200

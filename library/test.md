@@ -33,7 +33,6 @@ database "db\nnote" as db1 {
 
 
 Boundary(boundary1, "first boundry")
-
 Boundary(boundary2, "Second Boundry", "type param")
 
 boundary1 -> boundary2
