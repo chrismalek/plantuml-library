@@ -18,8 +18,9 @@ footer hello footer
 rectangle "Test Rectangle"
 
 rectangle "Outer Rectangle" {
-  rectangle "Rectangle"
-  rectangle "2nd rectange"
+  rectangle "Rectangle" as rect1
+  rectangle "2nd rectange" as rect2
+  rect1 --> rect2: Here is some 
 }
 package "hello" as pack {
 

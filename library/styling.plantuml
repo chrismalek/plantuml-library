@@ -2,21 +2,21 @@
 ' ##################################
 ' https://coolors.co/f94144-f3722c-f8961e-f9c74f-90be6d-43aa8b-577590
 !define DEFAULT_COLOR_FONT #000000
-!define DEFAULT_COLOR_BACKGROUND #F2F5F7
+!define DEFAULT_COLOR_BACKGROUND #CCD7E0
 !define DEFAULT_COLOR_BORDER #14213D
-!define DEFAULT_COLOR_ARROW #F8961E
-!define DEFAULT_COLOR_ARROW_TEXT #F8961E
+!define DEFAULT_COLOR_ARROW #F3722C
+!define DEFAULT_COLOR_ARROW_TEXT #F3722C
 !define DEFAULT_COLOR_ACTOR #000000
 !define DEFAULT_COLOR_INTERFACE #000000
 !define DEFAULT_COLOR_BOUNDARY_BORDER #577590
 !define DEFAULT_COLOR_BOUNDARY_BACKGROUND White
 
 
-
 skinparam ActorBackgroundColor DEFAULT_COLOR_ACTOR
 skinparam ActorBorderColor DEFAULT_COLOR_ACTOR
 skinparam ArrowColor DEFAULT_COLOR_ARROW
 skinparam ArrowFontColor DEFAULT_COLOR_ARROW_TEXT
+skinparam ArrowMessageAlignment center
 skinparam ArrowThickness 3
 skinparam BoxPadding DEFAULT_PADDING
 skinparam DatabaseBackgroundColor DEFAULT_COLOR_BACKGROUND
