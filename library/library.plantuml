@@ -30,19 +30,19 @@ hide stereotype
 
 
 skinparam DefaultFontSize DEFAULT_FONT_SIZE
-skinparam defaultTextAlignment left
+skinparam defaultTextAlignment center
 skinparam BoxPadding DEFAULT_PADDING
 skinparam DefaultFontName Helvetica
 skinparam shadowing false
 skinparam wrapWidth 200
 skinparam maxMessageSize 150
-skinparam linetype ortho
+' skinparam linetype ortho
 
 
 skinparam ArrowColor DEFAULT_COLOR_ARROW
 skinparam ArrowFontColor DEFAULT_COLOR_ARROW_TEXT
 ' skinparam ColorArrowSeparationSpace 30
-skinparam ArrowThickness 3
+skinparam ArrowThickness 2.5
 
 skinparam rectangle {
     StereotypeFontSize 40

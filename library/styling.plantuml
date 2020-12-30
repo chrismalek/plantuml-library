@@ -17,13 +17,13 @@ skinparam ActorBorderColor DEFAULT_COLOR_ACTOR
 skinparam ArrowColor DEFAULT_COLOR_ARROW
 skinparam ArrowFontColor DEFAULT_COLOR_ARROW_TEXT
 skinparam ArrowMessageAlignment center
-skinparam ArrowThickness 3
+skinparam ArrowThickness 2.5
 skinparam BoxPadding DEFAULT_PADDING
 skinparam DatabaseBackgroundColor DEFAULT_COLOR_BACKGROUND
 skinparam DatabaseBorderColor DEFAULT_COLOR_BORDER
 skinparam DefaultFontName Helvetica
 skinparam DefaultFontSize DEFAULT_FONT_SIZE
-skinparam defaultTextAlignment left
+skinparam defaultTextAlignment center
 skinparam InterfaceBorderColor DEFAULT_COLOR_INTERFACE
 skinparam InterfaceBorderColor DEFAULT_COLOR_INTERFACE
 
