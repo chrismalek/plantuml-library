@@ -1,0 +1,151 @@
+
+hide stereotype
+
+' Shortcuts
+' ##############
+
+!define LAYOUT_TOP_DOWN top to bottom direction
+!define LAYOUT_LEFT_RIGHT left to right direction
+
+' Colors
+' ##################################
+' https://coolors.co/f94144-f3722c-f8961e-f9c74f-90be6d-43aa8b-577590
+!define DEFAULT_COLOR_FONT #000000
+!define DEFAULT_COLOR_BACKGROUND #CCD7E0
+!define DEFAULT_COLOR_BORDER #14213D
+!define DEFAULT_COLOR_ARROW #43AA8B
+!define DEFAULT_COLOR_ARROW_TEXT #43AA8B
+!define DEFAULT_COLOR_ACTOR #000000
+!define DEFAULT_COLOR_INTERFACE #000000
+!define DEFAULT_COLOR_BOUNDARY_BORDER #577590
+!define DEFAULT_COLOR_BOUNDARY_BACKGROUND White
+
+
+' Styling
+' ##################################
+
+!define DEFAULT_PADDING 200
+!define DEFAULT_FONT_SIZE 15
+!define DEFAULT_FONT_SIZE_ADDL_TEXT 12
+
+
+skinparam DefaultFontSize DEFAULT_FONT_SIZE
+skinparam defaultTextAlignment center
+skinparam BoxPadding DEFAULT_PADDING
+skinparam DefaultFontName Helvetica
+skinparam shadowing false
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+' skinparam linetype ortho
+
+
+skinparam ArrowColor DEFAULT_COLOR_ARROW
+skinparam ArrowFontColor DEFAULT_COLOR_ARROW_TEXT
+' skinparam ColorArrowSeparationSpace 30
+skinparam ArrowThickness 2.5
+
+skinparam rectangle {
+    StereotypeFontSize 40
+    Shadowing false
+    StereotypeFontColor DEFAULT_COLOR_FONT
+    FontColor DEFAULT_COLOR_FONT
+    FontSize DEFAULT_FONT_SIZE
+    BorderColor DEFAULT_COLOR_BORDER
+    BackgroundColor DEFAULT_COLOR_BACKGROUND
+}
+
+skinparam package {
+    StereotypeFontSize 40
+    Shadowing false
+    StereotypeFontColor DEFAULT_COLOR_FONT
+    FontColor DEFAULT_COLOR_FONT
+    FontSize DEFAULT_FONT_SIZE
+    BorderColor DEFAULT_COLOR_BORDER
+    BackgroundColor DEFAULT_COLOR_BACKGROUND
+}
+
+skinparam rectangle<<boundary>> {
+    ' Shadowing false
+    ' StereotypeFontSize 0
+    ' FontColor #444444
+    BorderColor DEFAULT_COLOR_BOUNDARY_BORDER
+    BorderStyle dashed
+    BackgroundColor DEFAULT_COLOR_BOUNDARY_BACKGROUND
+    
+}
+
+
+skinparam Package<<boundary>> {
+    ' Shadowing false
+    ' StereotypeFontSize 0
+    ' FontColor #444444
+    BorderColor DEFAULT_COLOR_BOUNDARY_BORDER
+    BorderStyle dashed
+    BackgroundColor DEFAULT_COLOR_BOUNDARY_BACKGROUND
+    
+}
+
+
+' skinparam rectangle<<container>> {
+'     StereotypeFontColor DEFAULT_COLOR_FONT
+'     FontColor DEFAULT_COLOR_FONT
+'     BackgroundColor CONTAINER_BG_COLOR
+'     BorderColor #3C7FC0
+' }
+
+skinparam DatabaseBackgroundColor DEFAULT_COLOR_BACKGROUND
+skinparam DatabaseBorderColor DEFAULT_COLOR_BORDER
+
+' skinparam ArrowThickness 4
+skinparam Arrow {
+    Color DEFAULT_COLOR_ARROW
+    ' FontColor #666666
+    ' FontSize 12
+    ' Thickness 4a
+    
+}
+
+
+
+
+
+skinparam InterfaceBorderColor DEFAULT_COLOR_INTERFACE
+skinparam InterfaceBorderColor DEFAULT_COLOR_INTERFACE
+
+
+skinparam ActorBorderColor DEFAULT_COLOR_ACTOR
+skinparam ActorBackgroundColor DEFAULT_COLOR_ACTOR
+
+' Boundaries
+' ##################################
+
+' !define Boundary(e_alias, e_label) rectangle "==e_label" <<boundary>> as e_alias
+' !define Boundary(e_alias, e_label, e_type) rectangle "==e_label\n<size:DEFAULT_FONT_SIZE_ADDL_TEXT>e_type</size>" <<boundary>> as e_alias
+
+
+!define BoundaryPackage(e_alias, e_label) package "==e_label" <<boundary>> as e_alias
+!define BoundaryPackage(e_alias, e_label, e_type) package "==e_label\n<size:DEFAULT_FONT_SIZE_ADDL_TEXT>e_type</size>" <<boundary>> as e_alias
+
+
+
+!procedure defaulttest($x, $y="DefaultY", $z="DefaultZ")
+note over Alice
+  x = $x
+  y = $y
+  z = $z
+end note
+!endprocedure
+
+
+
+!procedure boundary($e_alias, $e_label="Default Label", $e_type="")
+
+!if (%strlen($e_type) > 0)
+rectangle "==e_label\n<size:DEFAULT_FONT_SIZE_ADDL_TEXT>e_type</size>" <<boundary>> as e_alias
+!else
+rectangle "==e_label" <<boundary>> as e_alias
+
+!endif
+
+
+!endprocedure
