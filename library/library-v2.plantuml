@@ -124,6 +124,6 @@ skinparam ActorBackgroundColor DEFAULT_COLOR_ACTOR
 !if ($pType == "")
 rectangle "==$pLabel" <<boundary>> as $pAlias 
 !else
-rectangle "==$pLabel\n<size:$DEFAULT_FONT_SIZE_ADDL_TEXT>$pType</size>" <<boundary>> as $pAlias 
+rectangle "==$pLabel\n<size:DEFAULT_FONT_SIZE_ADDL_TEXT>$pType</size>" <<boundary>> as $pAlias 
 !endif
 !endprocedure
