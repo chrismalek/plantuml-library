@@ -117,28 +117,13 @@ skinparam ActorBorderColor DEFAULT_COLOR_ACTOR
 skinparam ActorBackgroundColor DEFAULT_COLOR_ACTOR
 
 ' Boundaries
-' ##################################
-
-' !define Boundary(e_alias, e_label) rectangle "==e_label" <<boundary>> as e_alias
-' !define Boundary(e_alias, e_label, e_type) rectangle "==e_label\n<size:DEFAULT_FONT_SIZE_ADDL_TEXT>e_type</size>" <<boundary>> as e_alias
 
 
-' !define BoundaryPackage(e_alias, e_label) package "==e_label" <<boundary>> as e_alias
-' !define BoundaryPackage(e_alias, e_label, e_type) package "==e_label\n<size:DEFAULT_FONT_SIZE_ADDL_TEXT>e_type</size>" <<boundary>> as e_alias
+!procedure $boundary($pAlias, $pLabel="Default Label", $pType="")
 
-
-
-
-
-
-
-!procedure boundary($e_alias, $e_label="Default Label", $e_type="-")
-
-!if ($e_type == "-")
-rectangle "==$e_label\n<size:DEFAULT_FONT_SIZE_ADDL_TEXT>$e_type</size>" <<boundary>> as $e_alias
+!if ($pType == "")
+rectangle "==$pLabel" <<boundary>> as $pAlias 
 !else
-rectangle "==$e_label" <<boundary>> as $e_alias
+rectangle "==$pLabel\n<size:$DEFAULT_FONT_SIZE_ADDL_TEXT>$pType</size>" <<boundary>> as $pAlias 
 !endif
-
-
 !endprocedure
