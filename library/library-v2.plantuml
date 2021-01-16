@@ -127,3 +127,13 @@ rectangle "==$pLabel" <<boundary>> as $pAlias
 rectangle "==$pLabel\n<size:DEFAULT_FONT_SIZE_ADDL_TEXT>[$pType]</size>" <<boundary>> as $pAlias 
 !endif
 !endprocedure
+
+
+!procedure $component($pAlias, $pLabel="Default Label", $pType="")
+
+!if ($pType == "")
+rectangle "==$pLabel" <<rectangle>> as $pAlias 
+!else
+rectangle "==$pLabel\n<size:DEFAULT_FONT_SIZE_ADDL_TEXT>[$pType]</size>" <<rectangle>> as $pAlias 
+!endif
+!endprocedure
