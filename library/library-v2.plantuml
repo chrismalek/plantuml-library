@@ -123,28 +123,21 @@ skinparam ActorBackgroundColor DEFAULT_COLOR_ACTOR
 ' !define Boundary(e_alias, e_label, e_type) rectangle "==e_label\n<size:DEFAULT_FONT_SIZE_ADDL_TEXT>e_type</size>" <<boundary>> as e_alias
 
 
-!define BoundaryPackage(e_alias, e_label) package "==e_label" <<boundary>> as e_alias
-!define BoundaryPackage(e_alias, e_label, e_type) package "==e_label\n<size:DEFAULT_FONT_SIZE_ADDL_TEXT>e_type</size>" <<boundary>> as e_alias
+' !define BoundaryPackage(e_alias, e_label) package "==e_label" <<boundary>> as e_alias
+' !define BoundaryPackage(e_alias, e_label, e_type) package "==e_label\n<size:DEFAULT_FONT_SIZE_ADDL_TEXT>e_type</size>" <<boundary>> as e_alias
 
 
 
-!procedure defaulttest($x, $y="DefaultY", $z="DefaultZ")
-note over Alice
-  x = $x
-  y = $y
-  z = $z
-end note
-!endprocedure
 
 
 
-!procedure boundary($e_alias, $e_label="Default Label", $e_type="")
 
-!if (%strlen($e_type) > 0)
-rectangle "==e_label\n<size:DEFAULT_FONT_SIZE_ADDL_TEXT>e_type</size>" <<boundary>> as e_alias
+!procedure boundary($e_alias, $e_label="Default Label", $e_type="-")
+
+!if ($e_type == "-")
+rectangle "==$e_label\n<size:DEFAULT_FONT_SIZE_ADDL_TEXT>$e_type</size>" <<boundary>> as $e_alias
 !else
-rectangle "==e_label" <<boundary>> as e_alias
-
+rectangle "==$e_label" <<boundary>> as $e_alias
 !endif
 
 
