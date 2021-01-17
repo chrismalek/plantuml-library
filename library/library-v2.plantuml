@@ -124,7 +124,7 @@ skinparam ActorBackgroundColor DEFAULT_COLOR_ACTOR
 
 ' Boundaries
 
-!procedure $boundary($pAlias, $pLabel="Default Label", $pTech="", $descr="here is some text")
+!procedure $boundary($pAlias, $pLabel="Default Label", $pTech="", $descr="")
 !$out = $addLabel($pLabel)
 !if ($pTech != "")
 !$out = $out +  $addTech($pTech)
