@@ -1,4 +1,3 @@
-
 hide stereotype
 
 ' Shortcuts
@@ -105,35 +104,46 @@ skinparam Arrow {
     
 }
 
-
-
-
-
 skinparam InterfaceBorderColor DEFAULT_COLOR_INTERFACE
 skinparam InterfaceBorderColor DEFAULT_COLOR_INTERFACE
-
-
 skinparam ActorBorderColor DEFAULT_COLOR_ACTOR
 skinparam ActorBackgroundColor DEFAULT_COLOR_ACTOR
 
+!function $addTech($techn)
+!return '<size:'+DEFAULT_FONT_SIZE_ADDL_TEXT+'>['+$techn+']</size>'
+!endfunction
+
+!function $addLabel($label)
+!return '=='+$label+'\n'
+!endfunction
+
+!function $addDescr($descr)
+!return '\n<size:'+DEFAULT_FONT_SIZE_ADDL_TEXT+'>'+$descr+'</size>'
+!endfunction
+
+
 ' Boundaries
 
-
-!procedure $boundary($pAlias, $pLabel="Default Label", $pType="")
-
-!if ($pType == "")
-rectangle "==$pLabel" <<boundary>> as $pAlias 
-!else
-rectangle "==$pLabel\n<size:DEFAULT_FONT_SIZE_ADDL_TEXT>[$pType]</size>" <<boundary>> as $pAlias 
+!procedure $boundary($pAlias, $pLabel="Default Label", $pTech="", $descr="here is some text")
+!$out = $addLabel($pLabel)
+!if ($pTech != "")
+!$out = $out +  $addTech($pTech)
 !endif
+!if ($descr != "")
+!$out = $out + $addDescr($descr)
+!endif
+rectangle "$out" <<boundary>> as $pAlias
 !endprocedure
 
 
-!procedure $component($pAlias, $pLabel="Default Label", $pType="")
-
-!if ($pType == "")
-rectangle "==$pLabel" <<rectangle>> as $pAlias 
-!else
-rectangle "==$pLabel\n<size:DEFAULT_FONT_SIZE_ADDL_TEXT>[$pType]</size>" <<rectangle>> as $pAlias 
+!procedure $component($pAlias, $pLabel="Default Label", $pTech="", $descr="")
+!$out = $addLabel($pLabel)
+!if ($pTech != "")
+!$out = $out +  $addTech($pTech)
 !endif
+!if ($descr != "")
+!$out = $out + $addDescr($descr)
+!endif
+rectangle "$out" <<rectangle>> as $pAlias
 !endprocedure
+
