@@ -26,22 +26,22 @@ rectangle "hello world"
 
 
 Library
+
 ```plantuml
-@startuml
 !include https://raw.githubusercontent.com/chrismalek/plantuml-library/master/library/styling-v2.plantuml
 !include https://raw.githubusercontent.com/chrismalek/plantuml-library/master/library/library-v2.plantuml
 
 
-
-
 $boundary("client","Client Network"){
-    $boundary("client.psoft","PeopleSoft System"){
-         $component("client.psoft.ae", "Data Exporter", "Application Engine") {
-            $component("client.psoft.ae.egress", "Egress Options", "configuration")   
-         }
-         $component("client.smtp", "SMTP Server", "SMTP")
-     }
+    $boundary("erp","ERP System", "PeopleSoft", "Additional Text"){
+    $component("batch1", "Data Exporter", "batch", "Additional text")
+    $component("smtp", "SMTP Server", "SMTP")
+    
+    batch1 --> smtp
 
+  
 }
+
+
 @enduml
 ```
